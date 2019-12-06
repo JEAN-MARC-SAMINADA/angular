@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { LibraryDTO } from '../shared-data/library-dto';
 
 @Injectable({
@@ -37,4 +37,7 @@ export class LibraryService {
   deleteLibrary(id: string): Observable<any> {
     return this.http.delete<any>('http://localhost:8080/libraries/' + id);
   }
+
+  searchValue: Subject<string> = new Subject<string>();
+
 }
