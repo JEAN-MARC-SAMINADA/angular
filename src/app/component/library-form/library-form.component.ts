@@ -64,7 +64,7 @@ export class LibraryFormComponent implements OnInit {
 
     console.log(libraryDTO);
 
-    if (libraryDTO.id === null || libraryDTO.id === '') {
+    if (libraryDTO.id === null || libraryDTO.id === '' || libraryDTO.id === undefined) {
       this.libraryService.addLibrary(libraryDTO).subscribe(() => {
         console.log('SuccessADD');
         this.router.navigate(['/liste']);

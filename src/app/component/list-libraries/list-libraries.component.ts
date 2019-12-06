@@ -20,17 +20,20 @@ export class ListLibrariesComponent implements OnInit {
     new AdressDTO('Paris', 12, 75011, 'avenue de Nulle Part'), new DirectorDTO('Madame', 'De la Fayette')),
   ]
 
-
-
   constructor(private libraryservice: LibraryService) { }
 
   ngOnInit() {
-    // this.libraries = this.libraries.filter(lib => {return lib.type === 'PUBLIQUE';});
+
     this.libraryservice.getAllLibraries().subscribe((libraries) => { this.libraries = libraries; });
-    this.libraryservice.searchValue.subscribe((rechercheLibrary)
-      => {
+
+    this.libraryservice.searchValue.subscribe((rechercheLibrary) => {
       console.log('Valeur cherchée ' + rechercheLibrary);
-      this.libraries = this.libraries.filter(lib => { return lib.label.includes(rechercheLibrary) })
+      if (rechercheLibrary.length > 0) {
+        this.libraries = this.libraries.filter(lib => { return lib.label.includes(rechercheLibrary) });
+
+      } else {
+        this.libraryservice.getAllLibraries().subscribe((libraries) => { this.libraries = libraries; });
+      }
     });
   }
 }
