@@ -39,7 +39,7 @@ export class LibraryFormComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
 
-    if (id !== undefined && id !== '') {
+    if (id !== undefined && id !== '' && id !== null) {
       this.libraryService.getLibrary(id).subscribe((library) => {
         this.library = library;
         this.libraryForm.controls['id'].setValue(this.library.id);

@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TableModule } from 'primeng/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LibraryComponent } from './component/library/library.component';
@@ -10,6 +10,7 @@ import { DisplayDataComponent } from './component/display-data/display-data.comp
 import { ListLibrariesComponent } from './component/list-libraries/list-libraries.component';
 import { LibraryFormComponent } from './component/library-form/library-form.component';
 import { SearchComponent } from './component/search/search.component';
+import { TableauComponent } from './component/tableau/tableau.component';
 
 
 
@@ -22,6 +23,7 @@ import { SearchComponent } from './component/search/search.component';
     ListLibrariesComponent,
     LibraryFormComponent,
     SearchComponent,
+    TableauComponent,
 
   ],
   imports: [
@@ -29,7 +31,8 @@ import { SearchComponent } from './component/search/search.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
