@@ -1,0 +1,12 @@
+<h1>display-data works! {{name}} OK</h1>
+<p>La somme de 3 et 5 est : {{nbr}}</p>
+<p>La somme de 3 et 5 est : {{3+5}}</p>
+<button  [disabled]="stateButton" (click)="switchButton()"> Sauvegarder
+    <img [src]="srcImg"> </button>
+<p>{{variable}}{{myProperty}}</p>
+<button  (click)="onClickMe()"> petit bouton
+            </button>
+<br>
+    <input label ="mon texte" (keyup)= "onKey($event)">
+<br>
+    <input label ="mon texte" [(ngModel)]= "myProperty">
